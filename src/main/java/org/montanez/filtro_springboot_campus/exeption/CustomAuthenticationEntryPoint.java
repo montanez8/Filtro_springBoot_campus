@@ -1,13 +1,12 @@
-package com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.exception;
+package org.montanez.filtro_springboot_campus.exeption;
 
-import java.io.IOException;
-
-import javax.servlet.http.HttpServletResponse;
-
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 
-import jakarta.servlet.ServletException;
+
+import java.io.IOException;
 
 public class CustomAuthenticationEntryPoint implements AuthenticationEntryPoint {
 

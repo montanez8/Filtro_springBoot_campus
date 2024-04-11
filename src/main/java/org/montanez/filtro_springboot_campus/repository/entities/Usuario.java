@@ -1,27 +1,14 @@
-package com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.repository.entities;
-
-import java.util.ArrayList;
-import java.util.List;
-
+package org.montanez.filtro_springboot_campus.repository.entities;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.validation.annotation.ExistsByUsername;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.PrePersist;
-import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
-import jakarta.persistence.UniqueConstraint;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
+import org.montanez.filtro_springboot_campus.validation.annotation.ExistsByUsername;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data

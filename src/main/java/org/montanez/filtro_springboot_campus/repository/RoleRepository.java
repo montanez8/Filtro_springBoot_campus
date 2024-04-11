@@ -1,10 +1,10 @@
-package com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.repository;
+package org.montanez.filtro_springboot_campus.repository;
 
-import java.util.Optional;
 
+import org.montanez.filtro_springboot_campus.repository.entities.Rol;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.repository.entities.Rol;
+import java.util.Optional;
 
 public interface RoleRepository extends JpaRepository<Rol, Long> {
     Optional<Rol> findByName(String name);

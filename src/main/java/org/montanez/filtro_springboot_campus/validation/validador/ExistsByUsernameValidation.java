@@ -1,13 +1,12 @@
-package com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.validation.validador;
+package org.montanez.filtro_springboot_campus.validation.validador;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-import com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.service.UsuarioService;
-import com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.validation.annotation.ExistsByUsername;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
+import org.montanez.filtro_springboot_campus.service.UsuarioService;
+import org.montanez.filtro_springboot_campus.validation.annotation.ExistsByUsername;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 @Component
 public class ExistsByUsernameValidation implements

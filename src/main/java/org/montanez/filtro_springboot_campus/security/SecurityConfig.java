@@ -1,7 +1,8 @@
-package com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.security;
+package org.montanez.filtro_springboot_campus.security;
 
-import java.util.List;
 
+import org.montanez.filtro_springboot_campus.exeption.CustomAuthenticationEntryPoint;
+import org.montanez.filtro_springboot_campus.handler.CustomAccessDeniedHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,8 +24,7 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-import com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.exception.CustomAuthenticationEntryPoint;
-import com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.handler.CustomAccessDeniedHandler;
+import java.util.List;
 
 @Configuration
 @EnableMethodSecurity(prePostEnabled = true)

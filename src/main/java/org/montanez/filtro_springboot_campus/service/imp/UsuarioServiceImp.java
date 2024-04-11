@@ -1,19 +1,19 @@
-package com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.service.imp;
+package org.montanez.filtro_springboot_campus.service.imp;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 
+import org.montanez.filtro_springboot_campus.repository.RoleRepository;
+import org.montanez.filtro_springboot_campus.repository.UsuarioRepositiry;
+import org.montanez.filtro_springboot_campus.repository.entities.Rol;
+import org.montanez.filtro_springboot_campus.repository.entities.Usuario;
+import org.montanez.filtro_springboot_campus.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.repository.RoleRepository;
-import com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.repository.UsuarioRepositiry;
-import com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.repository.entities.Rol;
-import com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.repository.entities.Usuario;
-import com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.service.UsuarioService;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UsuarioServiceImp implements UsuarioService {

@@ -1,4 +1,4 @@
-package com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.security;
+package org.montanez.filtro_springboot_campus.security;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import jakarta.servlet.FilterChain;
@@ -7,14 +7,13 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.montanez.filtro_springboot_campus.service.JWTService;
+import org.montanez.filtro_springboot_campus.service.JpaUserDetailsService;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-
-import com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.service.JWTService;
-import com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.service.JpaUserDetailsService;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -32,15 +31,12 @@ public class JWTValidationFilter extends OncePerRequestFilter {
 
     @SuppressWarnings("null")
     @Override
-    protected void doFilterInternal(HttpServletRequest request,
-            HttpServletResponse response,
-            FilterChain filterChain) throws ServletException, IOException {
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         final var requestTokenHeader = request.getHeader(AUTHORIZATION_HEADER);
         String username = null;
         String jwt = null;
 
-        if (Objects.nonNull(requestTokenHeader)
-                && requestTokenHeader.startsWith(AUTHORIZATION_HEADER_BEARER)) {
+        if (Objects.nonNull(requestTokenHeader) && requestTokenHeader.startsWith(AUTHORIZATION_HEADER_BEARER)) {
             jwt = requestTokenHeader.substring(7);
 
             try {
@@ -56,8 +52,7 @@ public class JWTValidationFilter extends OncePerRequestFilter {
             final var userDetails = this.jwtUserDetailService.loadUserByUsername(username);
 
             if (this.jwtService.validateToken(jwt, userDetails)) {
-                var usernameAndPassAuthToken = new UsernamePasswordAuthenticationToken(
-                        userDetails, null, userDetails.getAuthorities());
+                var usernameAndPassAuthToken = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                 usernameAndPassAuthToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                 SecurityContextHolder.getContext().setAuthentication(usernameAndPassAuthToken);
             }

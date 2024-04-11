@@ -1,4 +1,4 @@
-package com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.repository.models;
+package org.montanez.filtro_springboot_campus.repository.models;
 
 import lombok.Data;
 

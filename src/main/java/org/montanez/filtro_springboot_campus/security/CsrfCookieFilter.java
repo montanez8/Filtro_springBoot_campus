@@ -1,4 +1,4 @@
-package com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.security;
+package org.montanez.filtro_springboot_campus.security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

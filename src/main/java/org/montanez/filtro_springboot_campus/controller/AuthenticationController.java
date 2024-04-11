@@ -1,5 +1,11 @@
-package com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.controller;
+package org.montanez.filtro_springboot_campus.controller;
 
+
+import lombok.AllArgsConstructor;
+import org.montanez.filtro_springboot_campus.repository.models.JWTRequest;
+import org.montanez.filtro_springboot_campus.repository.models.JWTResponse;
+import org.montanez.filtro_springboot_campus.service.JWTService;
+import org.montanez.filtro_springboot_campus.service.JpaUserDetailsService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -8,13 +14,6 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.repository.models.JWTRequest;
-import com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.repository.models.JWTResponse;
-import com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.service.JWTService;
-import com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.service.JpaUserDetailsService;
-
-import lombok.AllArgsConstructor;
 
 @RestController
 @AllArgsConstructor

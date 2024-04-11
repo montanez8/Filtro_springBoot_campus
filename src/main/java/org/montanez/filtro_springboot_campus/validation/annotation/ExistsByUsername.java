@@ -1,14 +1,13 @@
-package com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.validation.annotation;
+package org.montanez.filtro_springboot_campus.validation.annotation;
+
+import jakarta.validation.Constraint;
+import jakarta.validation.Payload;
+import org.montanez.filtro_springboot_campus.validation.validador.ExistsByUsernameValidation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-
-import com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.validation.validador.ExistsByUsernameValidation;
-
-import jakarta.validation.Constraint;
-import jakarta.validation.Payload;
 
 @Constraint(validatedBy = ExistsByUsernameValidation.class)
 @Target(ElementType.FIELD)

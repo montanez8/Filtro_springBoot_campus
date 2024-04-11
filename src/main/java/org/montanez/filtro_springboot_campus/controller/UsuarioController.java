@@ -1,38 +1,31 @@
-package com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.controller;
+package org.montanez.filtro_springboot_campus.controller;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
+import org.montanez.filtro_springboot_campus.repository.entities.Usuario;
+import org.montanez.filtro_springboot_campus.service.UsuarioService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.repository.entities.Usuario;
-import com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.service.UsuarioService;
-
-import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/usuario")
 public class UsuarioController {
     private UsuarioService usuarioService;
-
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping // http://localhost:8080/api/usuario
     public List<Usuario> list() {
         return usuarioService.findAll();
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public ResponseEntity<?> create(@Valid @RequestBody Usuario user,
             BindingResult result) {

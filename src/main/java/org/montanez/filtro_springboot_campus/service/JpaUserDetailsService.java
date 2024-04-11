@@ -1,9 +1,9 @@
-package com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.service;
+package org.montanez.filtro_springboot_campus.service;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
+import lombok.AllArgsConstructor;
+import org.montanez.filtro_springboot_campus.repository.UsuarioRepositiry;
+import org.montanez.filtro_springboot_campus.repository.entities.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -13,10 +13,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.repository.UsuarioRepositiry;
-import com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.repository.entities.Usuario;
-
-import lombok.AllArgsConstructor;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor

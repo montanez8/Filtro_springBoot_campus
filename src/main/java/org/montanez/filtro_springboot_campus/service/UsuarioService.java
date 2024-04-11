@@ -1,8 +1,10 @@
-package com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.service;
+package org.montanez.filtro_springboot_campus.service;
+
+
+
+import org.montanez.filtro_springboot_campus.repository.entities.Usuario;
 
 import java.util.List;
-
-import com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.repository.entities.Usuario;
 
 public interface UsuarioService {
     List<Usuario> findAll();

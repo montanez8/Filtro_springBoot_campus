@@ -1,4 +1,10 @@
-package com.montanez.springboot.plataforma_ayuda_humanitaria_refugiados.service;
+package org.montanez.filtro_springboot_campus.service;
+
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.security.Keys;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Service;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Collections;
@@ -6,18 +12,11 @@ import java.util.Date;
 import java.util.Map;
 import java.util.function.Function;
 
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Service;
-
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.security.Keys;
-
 @Service
 public class JWTService {
+    public static final long JWT_TOKEN_VALIDITY = 60 * 60;
+   public static final String JWT_SECRET = " X-CUcPqXZ`<D#d>H'{$&osAbh7!&4/Dt?$;0dfetOd!q4@s%V@/Z0_xf{g>&C$^7";
 
-    public static final long JWT_TOKEN_VALIDITY = 5 * 60 * 60;
-    public static final String JWT_SECRET = "jxgEQe.XHuPq8VdbyYFNkAN.dudQ0903YUn4";
 
     private Claims getAllClaimsFromToken(String token) {
         final var key = Keys.hmacShaKeyFor(JWT_SECRET.getBytes(StandardCharsets.UTF_8));
