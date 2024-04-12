@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -25,10 +26,12 @@ public class Inmueble {
     private String uranizacion;
     private double precio;
     private boolean llaves;
-    //private Oficina oficina;
-
-    //private Propietario propietario;
-
-   // private Visita visita;
+    
+    @OneToOne(mappedBy = "inmueble")
+    private Oficina oficina;
+    @OneToOne(mappedBy = "inmueble")
+    private Propietario propietario;
+    @OneToOne(mappedBy = "inmueble")
+    private Visita visita;
 
 }
