@@ -1,20 +1,18 @@
 package org.montanez.filtro_springboot_campus.repository.entities;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.PrimaryKeyJoinColumn;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @Entity
 @NoArgsConstructor
+@Table(name = "oficina")
 public class Oficina {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +21,9 @@ public class Oficina {
     private String direccion;
     private String telefono;
 
-    @OneToOne
-    @PrimaryKeyJoinColumn
-    private Inmueble inmueble;
+    @OneToMany(mappedBy = "oficina")
+    private List<Inmueble> inmuebles;
+
+    @OneToMany(mappedBy = "oficina")
+    private List<Llave> llaves;
 }
