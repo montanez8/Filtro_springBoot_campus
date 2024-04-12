@@ -47,7 +47,7 @@ public class Usuario {
 
     @Transient
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private boolean director;
+    private boolean user;
 
     @Transient
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
@@ -62,13 +62,10 @@ public class Usuario {
         return admin;
     }
 
-    public boolean isDirector() {
-        return director;
+    public boolean isUser() {
+        return user;
     }
 
-    public boolean isAuxiliar() {
-        return auxiliar;
-    }
 
     public boolean isEnabled() {
         return enabled;

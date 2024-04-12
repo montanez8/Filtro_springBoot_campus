@@ -42,13 +42,9 @@ public class UsuarioServiceImp implements UsuarioService {
             optionalRoleAdmin.ifPresent(roles::add);
         }
 
-        if (user.isDirector()) {
-            Optional<Rol> optionalRoleDirector = roleRepository.findByName("ROLE_DIRECTOR");
+        if (user.isUser()) {
+            Optional<Rol> optionalRoleDirector = roleRepository.findByName("ROLE_USER");
             optionalRoleDirector.ifPresent(roles::add);
-        }
-        if (user.isAuxiliar()) {
-            Optional<Rol> optionalRoleAuxiliar = roleRepository.findByName("ROLE_AUXILIAR");
-            optionalRoleAuxiliar.ifPresent(roles::add);
         }
 
         user.setRoles(roles);

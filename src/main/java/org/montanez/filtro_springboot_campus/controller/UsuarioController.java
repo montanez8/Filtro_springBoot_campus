@@ -10,6 +10,8 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import io.swagger.v3.oas.annotations.Operation;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -36,6 +38,7 @@ public class UsuarioController {
     }
 
     @PostMapping("/register") // http://localhost:8080/api/usuario/register
+    @Operation(summary = "Registar un usuario")
     public ResponseEntity<?> register(@Valid @RequestBody Usuario user,
             BindingResult result) {
         user.setAdmin(false);
